@@ -13,6 +13,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     #assets
+    'debug_toolbar',
 
     #local
     'app.main',
@@ -26,6 +27,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = '_core.urls'
@@ -48,6 +50,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = '_core.wsgi.application'
 FIXTURE_DIRS = [os.path.join(BASE_DIR, 'fixtures')]
+
+
+INTERNAL_IPS = ['127.0.0.1',]
 
 
 # Password validation
